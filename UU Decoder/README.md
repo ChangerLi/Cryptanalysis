@@ -10,3 +10,5 @@ Empty Line <br />
 <b>end</b>
 
 # Encoding method
+
+## Worked Example
