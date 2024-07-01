@@ -78,10 +78,9 @@ lcm:
 
 .globl gcd
 gcd:
-	addi $sp, $sp, -8
-	sw $a0, 0($sp) 
-	sw $a1, 4($sp) 
-
+    addi $sp, $sp, -8
+    sw $a0, 0($sp) 
+    sw $a1, 4($sp) 
     gcdRecursionLabel: 
         beqz $a0, aZero              #If first number is 0, return second number
         beqz $a1, aZero1             #If second number is 0, return first number
