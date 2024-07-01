@@ -77,44 +77,43 @@ lcm:
 	jr $ra
 
 .globl gcd
-
 gcd:
 	addi $sp, $sp, -8
 	sw $a0, 0($sp) 
 	sw $a1, 4($sp) 
 
-gcdRecursionLabel: 
-	beqz $a0, aZero              #If first number is 0, return second number
-	beqz $a1, aZero1             #If second number is 0, return first number
-	j findGCD
-	
-	aZero: 
-		move $v0, $a1 
-		j endGCD
-		
-	aZero1: 
-		move $v0, $a0 
-		j endGCD
-		
-	findGCD: 
-		blt $a0, $a1, rec
-		div $a0, $a1 
-		mfhi $a0 
-		j gcdRecursionLabel
-		
-		j endGCD
-		
-		rec: 
-			div $a1, $a0 
-			mfhi $a1
-			j gcdRecursionLabel
-			
-			j endGCD
-	endGCD: 
-		lw $a0, 0($sp)
-		lw $a1, 4($sp) 
-		addi $sp, $sp, 8
-		jr $ra
+    gcdRecursionLabel: 
+        beqz $a0, aZero              #If first number is 0, return second number
+        beqz $a1, aZero1             #If second number is 0, return first number
+        j findGCD
+        
+        aZero: 
+            move $v0, $a1 
+            j endGCD
+            
+        aZero1: 
+            move $v0, $a0 
+            j endGCD
+            
+        findGCD: 
+            blt $a0, $a1, rec
+            div $a0, $a1 
+            mfhi $a0 
+            j gcdRecursionLabel
+            
+            j endGCD
+            
+            rec: 
+                div $a1, $a0 
+                mfhi $a1
+                j gcdRecursionLabel
+                
+                j endGCD
+        endGCD: 
+            lw $a0, 0($sp)
+            lw $a1, 4($sp) 
+            addi $sp, $sp, 8
+            jr $ra
 
 .globl pubkExp
 pubkExp:

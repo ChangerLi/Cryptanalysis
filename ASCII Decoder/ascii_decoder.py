@@ -10,4 +10,8 @@ def hex_to_ascii(hex_string):
         ascii_character = chr(decimal_value)
         # Append the ASCII character to the result string
         ascii_string += ascii_character
+    print(ascii_string)
     return ascii_string
+
+
+hex_to_ascii("48656C6C6F20576F726C6421")

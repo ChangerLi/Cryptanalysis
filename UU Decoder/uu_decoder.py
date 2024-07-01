@@ -34,3 +34,6 @@ def uudecoder(encoded_data: str):
             num_bytes_in_line -= 3
 
     return decoded_string
+
+
+print(uudecoder(',2&5L;&\@5V]R;&0A'))
